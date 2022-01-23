@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+# 🌈 Hey there! 🌈
 
-You can use the [editor on GitHub](https://github.com/thisislola/thisislola.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+⬅️ That's me and yes, that is a Brontosaurus necklace.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+My name is Lorena Carthy-Wilmot (pronouns she/her) and I work as **Head of Lab/Digital Forensics Investigator** for the Forensic Technology Services Lab (FTS Lab) at PwC in Oslo, Norway. 
 
-### Markdown
+I have a **BSc (Hons) in Digital Forensics** from the Noroff University College in Kristiansand (Norway), and as of January 2022, I am researching for a **MSc in Cybersecurity** at the Teesside University in Middlesbrough, United Kingdom (online/part-time). Right after, I will be working towards Microsoft and MAD certifications, so wish me luck!
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+I love everything related to forensics and I could talk about it for hours. I am also interested in OSINT, CTI, InfoSec and trying new tools.
 
-```markdown
-Syntax highlighted code block
+## 💻 Blog
+I have an absurd amount of 'Untitled documents' with research bits and how-tos that I find personally helpful, but I have not being able to share this as I have been studying/working full time. Not a great excuse, I know. However, I have decided to start cleaning it up and posting it [on a Medium site](https://medium.com/@randomdent) (you can find me as @randomdent there). 
+Ps: You might identify references to the Hitchhiker's Guide to the Galaxy, MaddAddam triology, Greek Mythology or dinosaurs in most of my side projects! This is how I keep track :) 
 
-# Header 1
-## Header 2
-### Header 3
+## 📚 Presentations / Publications
+- *"Committing the perfect crime: A teaching perspective"*, 17th European Conference on Cyber Warfare and Security, ECCWS 2018
+Carthy, L., Øvensen, E., Little, R., Sutherland, I. & Read, H.
+- *"Forensic analysis of privacy-focused mobile browsers in Android Devices"*, BSides Oslo 2019
+Carthy, L., Jernslett, R., Little, R.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/thisislola/thisislola.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## 📧 Contact
+If you'd like to get in touch with me, please e-mail me at hei[at]lorenacw[.]com
+Otherwise, let's connect via [LinkedIn](https://linkedin.com/in/lorenacw) or [Twitter](https://twitter.com/therandomdent)

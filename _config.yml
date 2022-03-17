@@ -3,4 +3,6 @@ description: Digital Forensics & Cyber Security
 logo: /assets/img/bio.png
 show_downloads: false
 google_analytics: UA-127801816-1
-theme: jekyll-theme-minimal
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme

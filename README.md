@@ -1,12 +1,11 @@
 # 🌈 Hey there! 🌈
 
-⬅️ That's me and yes, that is a Brontosaurus necklace.
+My name is Lorena Carthy-Wilmot (pronouns: she/her/hers) and I work as **Head of Lab/Digital Forensics Investigator** for the Forensic Technology Services Lab (FTS Lab) at PwC in Oslo, Norway. 
 
-My name is Lorena Carthy-Wilmot (pronouns she/her) and I work as **Head of Lab/Digital Forensics Investigator** for the Forensic Technology Services Lab (FTS Lab) at PwC in Oslo, Norway. 
-
-I have a **BSc (Hons) in Digital Forensics** from the Noroff University College in Kristiansand (Norway), and as of January 2022, I am researching for a **MSc in Cybersecurity** at the Teesside University in Middlesbrough, United Kingdom (online/part-time). Right after, I will be working towards Microsoft and MAD certifications, so wish me luck!
+I have a **BSc (Hons) in Digital Forensics** from the Noroff University College in Kristiansand (Norway), and as of March 2022, I am researching for a **MSc in Cybersecurity** at the Teesside University in Middlesbrough, United Kingdom (online/part-time). Right after, I will be working towards Microsoft and MAD certifications, so wish me luck!
 
 I love everything related to forensics and I could talk about it for hours. I am also interested in OSINT, CTI, InfoSec and trying new tools.
+Other subjects: Diversity & inclusion, Accessibility, Deaf in Tech, BIPOC in Tech, LGBTQAI+. 
 
 ## 📚 Presentations / Publications
 - *"Committing the perfect crime: A teaching perspective"*, 17th European Conference on Cyber Warfare and Security, ECCWS 2018

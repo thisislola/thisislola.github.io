@@ -9,12 +9,14 @@ I love everything related to forensics and I could talk about it for hours! I am
 Other subjects: Diversity & inclusion, Accessibility, Deaf in Tech, BIPOC in Tech, LGBTQAI+. 
 
 ## 📚 Presentations / Publications
-- SOON! *A humble, yet agile 4-step framework for operational CTI*, Bsides Oslo 2022
+- *A humble, yet agile 4-step framework for operational CTI*, Bsides Oslo 2022
 Carthy-Wilmot, L.
 - *"Committing the perfect crime: A teaching perspective"*, 17th European Conference on Cyber Warfare and Security, ECCWS 2018
 Carthy, L., Øvensen, E., Little, R., Sutherland, I. & Read, H.
 - *"Forensic analysis of privacy-focused mobile browsers in Android Devices"*, BSides Oslo 2019
 Carthy, L., Jernslett, R., Little, R.
+- *"“The good and the ugly side of SOCMINT”*, Ada Lovelace Day Mini-Conference 2019
+- Carthy, L.
 
 ## 💻 Blog
 I have an absurd amount of 'Untitled documents' with research bits and how-tos that I find personally helpful, but I have not being able to share this as I have been studying/working full time. Not a great excuse, I know. However, I have decided to start cleaning it up and posting it [on a Medium site](https://medium.com/@randomdent) (you can find me as @randomdent there). 

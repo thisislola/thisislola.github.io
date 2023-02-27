@@ -9,7 +9,7 @@ I SERIOUSLY love everything related to forensics, but specifically digital foren
 Other subjects: Diversity & inclusion, Accessibility, Deaf in Tech, BIPOC in Tech, LGBTQAI+. 
 
 ## 📚 Presentations / Publications
-- *The big gap: Mobile Forensics-, NDC{Security} Oslo 2023
+- *The big gap: Mobile Forensics*, NDC{Security} Oslo 2023
 Carthy-Wilmot, L.
 - *A humble, yet agile 4-step framework for operational CTI*, Bsides Oslo 2022
 Carthy-Wilmot, L.

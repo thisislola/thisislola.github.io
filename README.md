@@ -1,6 +1,6 @@
 # 🌈 Hey there! 🌈
 
-My name is Lorena Carthy-Wilmot (pronouns: she/her/hers) and I am a Special Investigator, part of the  Digital Police Work section at the Police in Norway. Previously, I was the Head for the Forensic Technology Services Lab at PwC in Oslo. 
+My name is Lorena Carthy-Wilmot (pronouns: she/her/hers) and I work in the field of Digital Forensics and Incident Response at the Police in Norway. Previously, I was the Head for the Forensic Technology Services Lab at PwC in Oslo. 
 
 I have a BSc (Hons) in Digital Forensics from the Noroff University College (Kristiansand, Norway) and a MSc in Cybersecurity from the Teesside University in Middlesbrough, United Kingdom.
 
@@ -9,6 +9,8 @@ I SERIOUSLY love everything related to forensics, but specifically digital foren
 Other subjects: Diversity & inclusion, Accessibility, Deaf in Tech, BIPOC in Tech, LGBTQAI+. 
 
 ## 📚 Presentations / Publications
+- *The big gap: Mobile Forensics-, NDC{Security} Oslo 2023
+Carthy-Wilmot, L.
 - *A humble, yet agile 4-step framework for operational CTI*, Bsides Oslo 2022
 Carthy-Wilmot, L.
 - *"Committing the perfect crime: A teaching perspective"*, 17th European Conference on Cyber Warfare and Security, ECCWS 2018

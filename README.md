@@ -9,6 +9,8 @@ I SERIOUSLY love everything related to forensics, but specifically digital foren
 Other subjects: Diversity & inclusion, Accessibility, Deaf in Tech, BIPOC in Tech, LGBTQAI+. 
 
 ## 📚 Presentations / Publications
+- *Panelist: Leaders of Building Cyber Resilience*, Next IT CISO Conferance, Noordwijk aan Zee, Netherlands 2023.
+- *Being Deaf in the Police: My Journey*, DiHU (Døve i høyere utdanning) Conferance, Oslo 2023.
 - *The big gap: Mobile Forensics*, NDC{Security} Oslo 2023
 Carthy-Wilmot, L.
 - *A humble, yet agile 4-step framework for operational CTI*, Bsides Oslo 2022

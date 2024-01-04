@@ -31,4 +31,4 @@ Ps: You might identify references to the Hitchhiker's Guide to the Galaxy, MaddA
 
 ## 📧 Contact
 If you'd like to get in touch with me, please e-mail me at hei[at]lorenacw[.]com
-Otherwise, let's connect via [LinkedIn](https://linkedin.com/in/lorenacw) or [Twitter](https://twitter.com/therandomdent)
+Otherwise, let's connect via [LinkedIn](https://linkedin.com/in/lorenacw)

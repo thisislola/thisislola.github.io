@@ -1,6 +1,6 @@
 # 🌈 About me 🌈
 
-Hello! I'm Lorena Carthy-Wilmot, and I have the privilege of working in the dynamic field of Digital Forensics and Incident Response with the Norwegian Police. My role involves unraveling the complexities of crimes where digital evidence is involved, a challenge that I find both fascinating and rewarding. Before embarking on this journey, I gained valuable experience as the Head of the Forensic Technology Services Lab at PwC in Oslo, a role that sharpened my skills and deepened my passion for this field.
+Hello! I'm Lorena Carthy-Wilmot, and I have the privilege of working in the dynamic field of **Digital Forensics and Incident Response** with the Norwegian Police. My role involves unraveling the complexities of crimes and investigations where digital evidence is involved, a challenge that I find both fascinating and rewarding. Before embarking on this journey, I gained valuable experience as the Head of the Forensic Technology Services Lab at PwC in Oslo, a role that sharpened my skills and deepened my passion for this field.
 
 Academically, my journey has been deeply rooted in the fields of digital forensics and cybersecurity. I earned my **BSc (Hons) in Digital Forensics** from Noroff University College in the scenic Kristiansand, Norway. Pursuing further specialization, I completed my **MSc in Cybersecurity** at Teesside University in Middlesbrough, UK. These experiences not only enriched my knowledge, but also fueled my passion for uncovering digital truths.
 

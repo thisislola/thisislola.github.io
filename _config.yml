@@ -1,0 +1,52 @@
+# Site settings
+title: "Lorena Carthy-Wimot"
+description: "Digital Forensics and Cybersecurity"
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Resume settings
+resume_avatar:                  "true"
+resume_name:                    "Lorena Carthy-Wilmot"
+resume_title:                   "Digital Forensics & Cybersecurity"
+
+# contact button in _layouts/resume.html
+resume_contact_email:           "hei@lorenacw.com"
+
+# the next two items are used for schema itemprops in _layouts/resume.html
+resume_contact_telephone:       ""
+resume_contact_address:         ""
+
+resume_header_contact_info:     "addr • 00000 • hei@lorenacw.com"
+display_header_contact_info:    "false"
+
+resume_header_intro: "<p>I work as a Journalistic Security Engineer at Schibsted Media, an international media group headquartered in Oslo, Norway. In my role, I provide cybersecurity protection to uphold the integrity of journalists' work and safeguard the information they handle. </p>"
+
+# yes, no leave blank
+resume_looking_for_work:        "no"
+
+# comment out to hide
+resume_section_experience:      true
+resume_section_education:       true
+resume_section_projects:        true
+resume_section_skills:          false
+resume_section_presentations:     true
+resume_section_links:           true
+resume_section_associations:    true
+resume_section_interests:       true
+
+# Resume social links
+# uncomment the options you wish to display, and add your own URL
+resume_social_links:
+  resume_github_url:            "https://github.com/thisislola"
+  # resume_bluesky_url:          ""
+  resume_linkedin_url:          "https://www.linkedin.com/in/LorenaCW"
+  resume_website_url:           "https://lorenacw.com"
+  resume_medium_url:            "https://medium.com/@randomdent"
+resume_print_social_links:      true
+
+# Design settings
+resume_theme:                   default

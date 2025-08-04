@@ -1,5 +1,1 @@
-To edit
-
-## Licenses
-
-The code and styles are licensed under the MIT license. [See project license.](LICENSE)
+For more details about my professional background and latest updates, feel free to visit my [LinkedIn](https://linkedin.com/in/lorenacw) profile.

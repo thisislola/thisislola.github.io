@@ -21,7 +21,7 @@ resume_contact_address:         ""
 resume_header_contact_info:     "addr • 00000 • hei@lorenacw.com"
 display_header_contact_info:    "false"
 
-resume_header_intro: "<p>Cybersecurity and digital forensics professional with experience across law enforcement, journalism, and consulting. Currently serving as a Journalistic Security Engineer at Schibsted, where I provide cybersecurity protection to uphold the integrity of journalists' work and secure their sensitive work in high-risk environments. Previously, I worked as a Special Investigator with the Norwegian Police, supporting complex criminal cases with advanced digital forensic expertise. At PwC Norway, I managed the Forensic Technology Services Lab, providing forensic capabilities to national teams and shaping investigative methodologies. </p>"
+resume_header_intro: "<p>Cybersecurity and digital forensics professional with experience across law enforcement, journalism, and consulting. Currently serving as a Journalistic Security Engineer at Schibsted, where I provide cybersecurity protection to uphold the integrity of journalists' work and secure their sensitive work in high-risk environments. <br> Fluent in Spanish, English, Norwegian and Norwegian Sign Language.</p>"
 
 # yes, no leave blank
 resume_looking_for_work:        ""

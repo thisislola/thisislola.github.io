@@ -130,24 +130,37 @@
       <!-- end Skills -->
       {% endif %}
 
-      {% if site.resume_section_recognition %}
-      <!-- begin Recognition -->
+      {% if site.resume_section_presentations %}
+      <!-- begin Presentations -->
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Recognition</h2>
+          <h2>Presentations</h2>
         </header>
 
-        {% for recognition in site.data.recognitions %}
+        {% for presentation in site.data.presentations %}
         <div class="resume-item">
-          <h3 class="resume-item-title" itemprop="award">{{ recognition.award }}</h3>
-          <h4 class="resume-item-details">{{ recognition.organization }} &bull; {{ recognition.year }}</h4>
-          <p class="resume-item-copy">{{ recognition.summary }}</p>
+          <h3 class="resume-item-title">{{ presentation.title }}</h3>
+          <h4 class="resume-item-details">
+            {% if presentation.event %}{{ presentation.event }}{% endif %}
+            {% if presentation.event and presentation.year %} &bull; {% endif %}
+            {% if presentation.year %}{{ presentation.year }}{% endif %}
+          </h4>
+          {% if presentation.summary %}
+          <p class="resume-item-copy">{{ presentation.summary }}</p>
+          {% endif %}
+          {% if presentation.links %}
+          <ul class="resume-item-list">
+            {% for link in presentation.links %}
+            <li><a href="{{ link.url }}" itemprop="url">{{ link.label }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
         </div>
         {% endfor %}
 
       </section>
-      <!-- end Recognition -->
+      <!-- end Presentations -->
       {% endif %}
 
       {% if site.resume_section_associations %}

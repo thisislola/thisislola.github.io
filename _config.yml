@@ -12,6 +12,9 @@ sass:
 
 # Blog settings
 permalink: /blog/:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Resume settings
 resume_avatar:                  true

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
 <!DOCTYPE html>
 <html>
 
@@ -5,17 +11,11 @@
 
   <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
 
-    <div class="wrapper" itemscope itemtype="http://schema.org/Article">
-      <meta itemprop="author" content="{{ site.resume_name }}" />
-      <meta itemprop="headline" content="{{ page.title }}" />
-      {% if page.excerpt %}
-      <meta itemprop="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}" />
-      {% endif %}
+    <div class="wrapper" itemscope itemtype="http://schema.org/Blog">
 
       <header class="page-header">
-
         {% if site.resume_avatar == 'true' %}
-        <img src="{{ 'images/avatar.jpg' | relative_url }}" alt="author photo" class="avatar no-print" itemprop="image">
+        <img src="{{ 'images/avatar.jpg' | relative_url }}" alt="photo" class="avatar no-print" itemprop="image">
         {% endif %}
 
         <h1 class="header-name" itemprop="name">{{ site.resume_name }}</h1>
@@ -37,91 +37,35 @@
 
         <nav class="no-print" style="margin-top:1rem;">
           <a href="{{ '/' | relative_url }}">← Home</a>
-          &nbsp;•&nbsp;
-          <a href="{{ '/blog/' | relative_url }}">Blog</a>
         </nav>
 
       </header>
 
-      <!-- begin Blog Post -->
-      <section class="content-section" itemprop="articleBody">
+      <!-- Blog listing -->
+      <section class="content-section">
         <header class="section-header">
-          <h2 class="resume-item-title" style="margin-bottom:.25rem;">{{ page.title }}</h2>
-          <p class="resume-item-details">
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-            {% if page.categories and page.categories.size > 0 %}
-              &bull;
-              {% for cat in page.categories %}
-                <span class="post-category">{{ cat }}</span>{% unless forloop.last %}, {% endunless %}
-              {% endfor %}
-            {% endif %}
-            {% if page.tags and page.tags.size > 0 %}
-              &bull;
-              {% for tag in page.tags %}
-                <span class="post-tag">#{{ tag }}</span>{% unless forloop.last %} {% endunless %}
-              {% endfor %}
-            {% endif %}
-          </p>
+          <h2>Blog</h2>
         </header>
 
-        <article class="resume-item">
-          <div class="resume-item-copy">
-            {{ content }}
-          </div>
-        </article>
-
-        {% if page.updated %}
-        <p class="resume-item-details" style="margin-top:0.5rem;">
-          <em>Updated:</em>
-          <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%B %-d, %Y" }}</time>
-        </p>
-        {% endif %}
-
-        <!-- Post navigation -->
-        <div class="resume-item no-print" style="margin-top:1.5rem;">
-          <p class="resume-item-copy">
-            {% if page.previous %}
-              ← Previous: <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
-            {% endif %}
-            {% if page.previous and page.next %} &nbsp;|&nbsp; {% endif %}
-            {% if page.next %}
-              Next: <a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a> →
-            {% endif %}
-          </p>
+        <div class="resume-item">
+          <ul class="resume-item-list">
+            {% assign posts_sorted = site.posts | sort: 'date' | reverse %}
+            {% for post in posts_sorted %}
+              <li style="margin-bottom: 1rem;">
+                <h3 class="resume-item-title" style="margin-bottom: 0;">
+                  <a href="{{ post.url | relative_url }}" itemprop="url">{{ post.title }}</a>
+                </h3>
+                <h4 class="resume-item-details">
+                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+                </h4>
+                {% if post.excerpt %}
+                <p class="resume-item-copy">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
         </div>
-
-        <!-- Optional comments block (Utterances / Giscus) -->
-        {% if site.comments == 'utterances' %}
-          <section class="content-section no-print">
-            <script src="https://utteranc.es/client.js"
-              repo="{{ site.comments_repo }}"
-              issue-term="pathname"
-              label="comments"
-              theme="github-light"
-              crossorigin="anonymous"
-              async>
-            </script>
-          </section>
-        {% elsif site.comments == 'giscus' %}
-          <section class="content-section no-print">
-            <script src="https://giscus.app/client.js"
-              data-repo="{{ site.comments_repo }}"
-              data-repo-id="{{ site.comments_repo_id }}"
-              data-category="{{ site.comments_category }}"
-              data-category-id="{{ site.comments_category_id }}"
-              data-mapping="pathname"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="bottom"
-              data-theme="light"
-              crossorigin="anonymous"
-              async>
-            </script>
-          </section>
-        {% endif %}
-
       </section>
-      <!-- end Blog Post -->
 
       <footer class="page-footer">
         <p class="footer-line">

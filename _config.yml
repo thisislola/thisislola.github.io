@@ -1,12 +1,17 @@
 # Site settings
 title: "Lorena Carthy-Wimot"
 description: "Digital Forensics and Cybersecurity"
+url: "https://www.lorenacw.com"
+baseurl: ""
 
 # Build settings
 markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
+
+# Blog settings
+permalink: /blog/:year/:month/:day/:title/
 
 # Resume settings
 resume_avatar:                  true

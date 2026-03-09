@@ -29,7 +29,9 @@ resume_contact_address:         ""
 resume_header_contact_info:     "Oslo, Norway • hei[at]lorenacw.com"
 display_header_contact_info:    true
 
-resume_header_intro: "<p>Cybersecurity and digital forensics professional with experience across law enforcement, journalism, and consulting. Currently serving as a Journalistic Security Engineer at Schibsted, where I provide cybersecurity protection to uphold the integrity of journalists' work and secure their sensitive work in high-risk environments. <br> Fluent in Spanish, English, Norwegian and Norwegian Sign Language.</p>"
+resume_header_intro: "<p>I work at the intersection of digital forensics and security strategy, with a career focused on one mission: protecting data integrity and people’s privacy against increasingly sophisticated threats.
+As Head of Security Strategy (Europe) at iVerify, I focus on advancing mobile Endpoint Detection and Response (EDR), with an emphasis on advanced threat hunting and mobile threat intelligence. My work centres on uncovering sophisticated attacks targeting the most overlooked and least protected endpoint, mobile devices, and helping organisations detect, investigate, and neutralise mobile-borne threats in an increasingly hostile digital landscape.
+</p>"
 
 # yes, no leave blank
 resume_looking_for_work:        ""

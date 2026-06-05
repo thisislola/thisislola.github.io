@@ -1,3 +1,38 @@
 ---
-layout: resume
+layout: default
 ---
+<div class="wrap"><div class="col">
+
+  <section class="hero">
+    <p class="hero__kicker reveal">{{ site.resume_title }}</p>
+    <h1 class="hero__title reveal">{{ site.home_heading }}</h1>
+    <div class="hero__lead reveal">{{ site.home_intro }}</div>
+    <div class="hero__actions reveal">
+      <a class="btn" href="{{ '/blog/' | relative_url }}">Read the writing <span class="btn__arrow">→</span></a>
+      <a class="btn btn--ghost" href="{{ '/cv/' | relative_url }}">View full CV</a>
+    </div>
+  </section>
+
+  <div class="reveal">
+    <div class="section-head">
+      <h2 class="section-head__title">Recent writing</h2>
+      <a class="section-head__link" href="{{ '/blog/' | relative_url }}">All posts →</a>
+    </div>
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% if posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in posts limit: 5 %}
+      <li class="post-row">
+        <div class="post-row__date">{{ post.date | date: "%b %-d, %Y" }}</div>
+        <div>
+          <h3 class="post-row__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          {% if post.excerpt %}<p class="post-row__excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>{% endif %}
+          {% if post.tags.size > 0 %}<div class="post-row__tags">{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}<p class="empty-note">No posts yet — the first one is on its way.</p>{% endif %}
+  </div>
+
+</div></div>

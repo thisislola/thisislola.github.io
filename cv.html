@@ -1,0 +1,92 @@
+---
+layout: default
+title: CV
+permalink: /cv/
+---
+<div class="wrap"><div class="col" itemscope itemtype="https://schema.org/Person">
+
+  <header class="cv-header">
+    <div class="cv-header__top">
+      {% if site.resume_avatar == 'true' or site.resume_avatar == true %}
+      <img class="cv-header__avatar" src="{{ '/images/avatar.jpg' | relative_url }}" alt="{{ site.resume_name }}" itemprop="image">
+      {% endif %}
+      <div>
+        <h1 class="cv-header__name" itemprop="name">{{ site.resume_name }}</h1>
+        <p class="cv-header__title" itemprop="jobTitle">{{ site.resume_title }}</p>
+        <p class="cv-header__contact">{{ site.resume_header_contact_info }}</p>
+      </div>
+    </div>
+    <div class="cv-header__intro" itemprop="description">{{ site.resume_header_intro }}</div>
+    {% if site.resume_contact_email %}
+    <div class="cv-actions"><a class="btn btn--ghost" href="mailto:{{ site.resume_contact_email | replace: '[at]', '@' }}">Get in touch</a></div>
+    {% endif %}
+  </header>
+
+  {% if site.resume_section_experience %}
+  <section class="cv-section"><h2>Experience</h2>
+    {% for job in site.data.experience %}
+    <div class="cv-item">
+      <div class="cv-item__head"><h3 class="cv-item__title">{{ job.company }}</h3><span class="cv-item__when">{{ job.duration }}</span></div>
+      <p class="cv-item__role">{{ job.position }}</p>
+      {% if job.summary %}<p class="cv-item__summary">{{ job.summary }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if site.resume_section_education %}
+  <section class="cv-section"><h2>Education</h2>
+    {% for ed in site.data.education %}
+    <div class="cv-item">
+      <div class="cv-item__head"><h3 class="cv-item__title">{{ ed.uni }}</h3><span class="cv-item__when">{{ ed.year }}</span></div>
+      <p class="cv-item__role">{{ ed.degree }}</p>
+      {% if ed.summary %}<p class="cv-item__summary">{{ ed.summary }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if site.resume_section_presentations %}
+  <section class="cv-section"><h2>Presentations &amp; Research</h2>
+    {% for p in site.data.presentations %}
+    <div class="cv-item">
+      <div class="cv-item__head"><h3 class="cv-item__title">{{ p.award }}</h3><span class="cv-item__when">{{ p.year }}</span></div>
+      <p class="cv-item__role">{{ p.organization }}{% if p.summary %} · {{ p.summary }}{% endif %}</p>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if site.resume_section_projects %}
+  {% assign has_projects = false %}{% for pr in site.data.projects %}{% if pr.project %}{% assign has_projects = true %}{% endif %}{% endfor %}
+  {% if has_projects %}
+  <section class="cv-section"><h2>Projects</h2>
+    {% for pr in site.data.projects %}{% if pr.project %}
+    <div class="cv-item">
+      <div class="cv-item__head"><h3 class="cv-item__title">{% if pr.url and pr.url != '#' %}<a href="{{ pr.url }}">{{ pr.project }}</a>{% else %}{{ pr.project }}{% endif %}</h3><span class="cv-item__when">{{ pr.duration }}</span></div>
+      {% if pr.role %}<p class="cv-item__role">{{ pr.role }}</p>{% endif %}
+      {% if pr.description and pr.description != '#' %}<p class="cv-item__summary">{{ pr.description }}</p>{% endif %}
+    </div>
+    {% endif %}{% endfor %}
+  </section>
+  {% endif %}{% endif %}
+
+  {% if site.resume_section_associations %}
+  <section class="cv-section"><h2>Associations</h2>
+    {% for a in site.data.associations %}
+    <div class="cv-item">
+      <div class="cv-item__head"><h3 class="cv-item__title">{% if a.url and a.url != '#' %}<a href="{{ a.url }}">{{ a.organization }}</a>{% else %}{{ a.organization }}{% endif %}</h3><span class="cv-item__when">{{ a.year }}</span></div>
+      {% if a.role %}<p class="cv-item__role">{{ a.role }}</p>{% endif %}
+      {% if a.summary %}<p class="cv-item__summary">{{ a.summary }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if site.resume_section_interests %}
+  <section class="cv-section"><h2>Interests</h2>
+    <ul class="cv-interests">{% for i in site.data.interests %}<li>{{ i.description }}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+</div></div>

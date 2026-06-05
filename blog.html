@@ -1,80 +1,34 @@
 ---
 layout: default
-title: Blog
+title: Writing
 permalink: /blog/
 ---
+<div class="wrap">
+  <div class="col">
 
-<!DOCTYPE html>
-<html>
+    <section class="hero" style="padding-bottom:.5rem">
+      <p class="hero__kicker">Writing</p>
+      <h1 class="hero__title" style="font-size:clamp(2rem,5vw,3rem)">Notes on forensics &amp; security.</h1>
+      <p class="hero__lead">Field notes, research, and the occasional deep dive into mobile threats, digital forensics, and protecting the people behind the data.</p>
+    </section>
 
-  {% include head.html %}
-
-  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
-
-    <div class="wrapper" itemscope itemtype="http://schema.org/Blog">
-
-      <header class="page-header">
-        {% if site.resume_avatar == 'true' %}
-        <img src="{{ 'images/avatar.jpg' | relative_url }}" alt="photo" class="avatar no-print" itemprop="image">
-        {% endif %}
-
-        <h1 class="header-name" itemprop="name">{{ site.resume_name }}</h1>
-
-        {% if site.display_header_contact_info == 'true' %}
-        <div class="header-contact-info">
-          <p>{{ site.resume_header_contact_info }}</p>
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% if posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in posts %}
+      <li class="post-row reveal">
+        <div class="post-row__date">{{ post.date | date: "%b %-d, %Y" }}</div>
+        <div>
+          <h2 class="post-row__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if post.excerpt %}<p class="post-row__excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>{% endif %}
+          {% if post.tags.size > 0 %}<div class="post-row__tags">{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>{% endif %}
         </div>
-        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty-note">Nothing published yet. Check back soon.</p>
+    {% endif %}
 
-        <div class="title-bar no-print">
-          <h2 class="header-title" itemprop="jobTitle">{{ site.resume_title }}</h2>
-          {% include icon-links.html %}
-        </div>
-
-        <div class="executive-summary" itemprop="description">
-          {{ site.resume_header_intro }}
-        </div>
-
-        <nav class="no-print" style="margin-top:1rem;">
-          <a href="{{ '/' | relative_url }}">← Home</a>
-        </nav>
-
-      </header>
-
-      <!-- Blog listing -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Blog</h2>
-        </header>
-
-        <div class="resume-item">
-          <ul class="resume-item-list">
-            {% assign posts_sorted = site.posts | sort: 'date' | reverse %}
-            {% for post in posts_sorted %}
-              <li style="margin-bottom: 1rem;">
-                <h3 class="resume-item-title" style="margin-bottom: 0;">
-                  <a href="{{ post.url | relative_url }}" itemprop="url">{{ post.title }}</a>
-                </h3>
-                <h4 class="resume-item-details">
-                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-                </h4>
-                {% if post.excerpt %}
-                <p class="resume-item-copy">{{ post.excerpt | strip_html | truncate: 160 }}</p>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </section>
-
-      <footer class="page-footer">
-        <p class="footer-line">
-          Template made by <a href="https://github.com/jglovier/resume-template">@jglovier</a>.
-        </p>
-      </footer>
-
-    </div>
-
-  </body>
-
-</html>
+  </div>
+</div>

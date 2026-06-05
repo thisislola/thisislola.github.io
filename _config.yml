@@ -1,56 +1,44 @@
-# Site settings
-title: "Lorena Carthy-Wilmot"
-description: "Digital Forensics and Cybersecurity"
-url: "https://www.lorenacw.com"
-baseurl: ""
+# ── Site ──────────────────────────────────────────────────────
+title:       "Lorena Carthy-Wilmot"
+description: "Digital Forensics & Cyber Security"
+url:         "https://www.lorenacw.com"
+baseurl:     ""
+lang:        "en"
+author:      "Lorena Carthy-Wilmot"
 
-# Build settings
+# ── Build ─────────────────────────────────────────────────────
 markdown: kramdown
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Blog settings
 permalink: /blog/:year/:month/:day/:title/
+sass:
+  style: compressed
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Resume settings
-resume_avatar:                  true
-resume_name:                    "Lorena Carthy-Wilmot"
-resume_title:                   "Digital Forensics & Cyber Security"
+# ── Homepage (intro + recent posts + CV link) ─────────────────
+home_heading: "Researching threats on the most overlooked endpoint: <em>your phone</em>."
+home_intro: >
+  <p>I work at the intersection of digital forensics and cybersecurity.
+  I'm Head of Security Strategy (Europe) at <a href="https://iverify.io">iVerify.</a></p>
 
-resume_contact_email:           "hei[at]lorenacw.com"
+# ── CV (content lives in _data/*.yml) ─────────────────────────
+resume_name:     "Lorena Carthy-Wilmot"
+resume_title:    "Digital Forensics & Cyber Security"
+resume_avatar:   true
+resume_contact_email:        "hei[at]lorenacw.com"
+resume_header_contact_info:  "Oslo, Norway • hei[at]lorenacw.com"
+resume_header_intro: "<p>I have a background in digital forensics and cybersecurity.</p>"
 
-resume_contact_telephone:       ""
-resume_contact_address:         ""
-
-resume_header_contact_info:     "Oslo, Norway • hei[at]lorenacw.com"
-display_header_contact_info:    true
-
-resume_header_intro: "<p>I work at the intersection of digital forensics and security strategy, with a career focused on one mission: protecting data integrity and people’s privacy against increasingly sophisticated threats.
-As Head of Security Strategy (Europe) at iVerify, I focus on advancing mobile Endpoint Detection and Response (EDR), with an emphasis on advanced threat hunting and mobile threat intelligence. My work centres on uncovering sophisticated attacks targeting the most overlooked and least protected endpoint, mobile devices, and helping organisations detect, investigate, and neutralise mobile-borne threats in an increasingly hostile digital landscape.
-</p>"
-
-# yes, no leave blank
-resume_looking_for_work:        ""
-
-resume_section_experience:      true
-resume_section_education:       true
-resume_section_projects:        true
-resume_section_skills:          false
-resume_section_presentations:   true
-resume_section_links:           false
-resume_section_associations:    true
-resume_section_interests:       false
+# Toggle CV sections on/off
+resume_section_experience:    true
+resume_section_education:     true
+resume_section_presentations: true
+resume_section_projects:      true
+resume_section_associations:  true
+resume_section_interests:     true
 
 resume_social_links:
-  resume_github_url:            "https://github.com/thisislola"
-  resume_bluesky_url:           "https://bsky.app/profile/lorenacw.com"
-  resume_linkedin_url:          "https://www.linkedin.com/in/LorenaCW"
-  resume_medium_url:            "https://medium.com/@randomdent"
-resume_print_social_links:      true
-
-resume_theme:                   default
-
+  resume_github_url:   "https://github.com/thisislola"
+  resume_bluesky_url:  "https://bsky.app/profile/lorenacw.com"
+  resume_linkedin_url: "https://www.linkedin.com/in/LorenaCW"
+  resume_medium_url:   "https://medium.com/@randomdent"

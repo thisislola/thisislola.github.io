@@ -5,7 +5,7 @@ layout: default
   <div class="col">
     <article itemscope itemtype="https://schema.org/BlogPosting">
       <header class="post-header">
-        <a class="post-header__back" href="{{ '/blog/' | relative_url }}">← Writing</a>
+        <a class="post-header__back" href="{{ '/blog/' | relative_url }}">← Blog</a>
         <p class="post-header__meta">
           <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
           {% if page.tags.size > 0 %} · {{ page.tags | join: " / " }}{% endif %}

@@ -27,10 +27,10 @@
 
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="{{ '/' | relative_url }}">{{ site.resume_name }}<span class="brand__dot">.</span></a>
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.resume_name }}<span class="brand__dot"> </span></a>
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
-      <a class="nav__link" href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' or page.layout == 'post' %}aria-current="page"{% endif %}>Writing</a>
+      <a class="nav__link" href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' or page.layout == 'post' %}aria-current="page"{% endif %}>Blog</a>
       <a class="nav__link" href="{{ '/cv/' | relative_url }}" {% if page.url contains '/cv' %}aria-current="page"{% endif %}>CV</a>
       <span class="socials">{{ socials }}</span>
     </nav>

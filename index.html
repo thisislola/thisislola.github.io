@@ -8,14 +8,14 @@ layout: default
     <h1 class="hero__title reveal">{{ site.home_heading }}</h1>
     <div class="hero__lead reveal">{{ site.home_intro }}</div>
     <div class="hero__actions reveal">
-      <a class="btn" href="{{ '/blog/' | relative_url }}">Read the writing <span class="btn__arrow">→</span></a>
+      <a class="btn" href="{{ '/blog/' | relative_url }}">Blog<span class="btn__arrow">→</span></a>
       <a class="btn btn--ghost" href="{{ '/cv/' | relative_url }}">View full CV</a>
     </div>
   </section>
 
   <div class="reveal">
     <div class="section-head">
-      <h2 class="section-head__title">Recent writing</h2>
+      <h2 class="section-head__title">Recent posts</h2>
       <a class="section-head__link" href="{{ '/blog/' | relative_url }}">All posts →</a>
     </div>
     {% assign posts = site.posts | sort: 'date' | reverse %}
@@ -32,7 +32,7 @@ layout: default
       </li>
       {% endfor %}
     </ul>
-    {% else %}<p class="empty-note">No posts yet — the first one is on its way.</p>{% endif %}
+    {% else %}<p class="empty-note">No posts yet, but the first one is on its way!</p>{% endif %}
   </div>
 
 </div></div>

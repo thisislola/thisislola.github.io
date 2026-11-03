@@ -33,11 +33,10 @@ home_intro: >
 
 # "Currently" list on the homepage lives in _data/now.yml
 
-# Independent work, shown as a quiet note near the bottom of the homepage
-# and on the CV. Leave company_name empty to hide it.
-company_name: ""
-company_url:  ""
-company_note: "I take on a small number of independent engagements alongside my day job: iOS forensic analysis, mobile threat assessments and training."
+# Independent work
+company_name: "via Emeriss in Norway / ENK"
+company_url:  "https://emeriss.no/"
+company_note: "I take on a small number of independent engagements alongside my day job."
 
 # ── CV (content lives in _data/*.yml) ─────────────────────────
 resume_name:     "Lorena Carthy-Wilmot"

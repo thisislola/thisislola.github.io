@@ -1,10 +1,10 @@
-# "Currently" on the homepage. Keep it short; update as things change.
+e# "Currently" on the homepage. Keep it short; update as things change.
 #   label: one word (Learning, Building, Researching, Speaking...)
 #   text:  one line
 #   url:   optional link
 
 - label: Training
-  text: "OBTS#v9"
+  text: "iOS Threat Hunting and Malware Analysis at OBTS#v9: https://objectivebythesea.org/v9/trainings.html"
 
 - label: Building
   text: "A collection of file paths for iOS forensic artifacts."

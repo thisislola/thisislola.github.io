@@ -32,7 +32,7 @@ layout: default
   <section class="section" id="now">
     <h2 class="section__label"><span class="section__num">01</span>Currently</h2>
     <ul class="now">
-      {% for n in site.data.now %}
+      {% for n in site.data.now %}{% if n.text == nil or n.text == "" %}{% continue %}{% endif %}
       <li class="now__item">
         <span class="now__label">{{ n.label }}</span>
         <span class="now__text">{% if n.url %}<a href="{{ n.url }}">{{ n.text }}</a>{% else %}{{ n.text }}{% endif %}</span>
@@ -105,7 +105,8 @@ layout: default
     <h2 class="section__label"><span class="section__num">05</span>Contact</h2>
     <div class="contact">
       {% if site.company_name != "" %}
-      <p>{{ site.company_note }} These go through {% if site.company_url != "" %}<a href="{{ site.company_url }}">{{ site.company_name }}</a>{% else %}{{ site.company_name }}{% endif %}.</p>
+      {% assign note = site.company_note | strip %}{% assign last = note | slice: -1 %}{% if last == "." %}{% assign n = note.size | minus: 1 %}{% assign note = note | slice: 0, n %}{% endif %}
+      <p>{{ note }} {% if site.company_url != "" %}<a href="{{ site.company_url }}">{{ site.company_name }}</a>{% else %}{{ site.company_name }}{% endif %}.</p>
       {% endif %}
       <p>{% if site.company_name != "" %}For that, talks or research{% else %}For talks, research or collaboration{% endif %}, write to <a href="mailto:{{ email }}">{{ site.resume_contact_email }}</a>. The rest is on the <a href="{{ '/cv/' | relative_url }}">CV</a>.</p>
     </div>

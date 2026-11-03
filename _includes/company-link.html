@@ -1,0 +1,7 @@
+{%- comment -%}
+  Company name, linked when company_url is set. Blank or missing values
+  (YAML nil or "") count as unset. Callers check `site.company_name | strip`.
+{%- endcomment -%}
+{%- assign _name = site.company_name | strip -%}
+{%- assign _url = site.company_url | strip -%}
+{%- if _url != "" -%}<a href="{{ _url }}">{{ _name }}</a>{%- else -%}{{ _name }}{%- endif -%}

@@ -3,7 +3,12 @@ layout: default
 title: Talks
 permalink: /talks/
 ---
-{% assign decks = site.talks | sort: 'date' | reverse %}
+{% comment %}Talks without a front-matter date get the build time from Jekyll: list those last, without a year.{% endcomment %}
+{% assign t_s = site.time | date: "%s" %}
+{% assign dated = "" | split: "" %}{% assign undated = "" | split: "" %}
+{% for t in site.talks %}{% assign d_s = t.date | date: "%s" %}{% if t.date == nil or d_s == "" or d_s == t_s %}{% assign undated = undated | push: t %}{% else %}{% assign dated = dated | push: t %}{% endif %}{% endfor %}
+{% assign dated = dated | sort: 'date' | reverse %}
+{% assign decks = dated | concat: undated %}
 <div class="wrap">
 
   <header class="page-intro">
@@ -18,7 +23,7 @@ permalink: /talks/
     <li class="talk-card">
       <a href="{{ t.url | relative_url }}">
         <span class="talk-card__frame">{% include deck-cover.html talk=t index=forloop.index0 %}</span>
-        <span class="talk-card__meta">{{ t.event }}{% if t.date %} · {{ t.date | date: "%Y" }}{% endif %}</span>
+        <span class="talk-card__meta">{{ t.event }}{% assign d_s = t.date | date: "%s" %}{% if t.date and d_s != "" and d_s != t_s %}{% if t.event %} · {% endif %}{{ t.date | date: "%Y" }}{% endif %}</span>
         <span class="talk-card__title">{{ t.title }}</span>
       </a>
     </li>

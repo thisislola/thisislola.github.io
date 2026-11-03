@@ -13,7 +13,7 @@ layout: default
     {% assign now_job = site.data.experience | first %}
     {% assign now_co = now_job.company | split: ' | ' %}
     <dl class="facts">
-      <div class="facts__row"><dt>Based in</dt><dd>Oslo, Norway</dd></div>
+      <div class="facts__row"><dt>Based in</dt><dd>{{ site.location }}</dd></div>
       <div class="facts__row"><dt>Now</dt><dd>{{ now_co[0] }}</dd></div>
       <div class="facts__row"><dt>Before</dt><dd>{% for job in site.data.experience offset: 1 %}{% assign co = job.company | split: ' | ' %}{{ co[0] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>
       {% assign certs = site.data.education | where_exp: "e", "e.summary" %}
@@ -28,11 +28,13 @@ layout: default
     </dl>
   </header>
 
-  {% if site.data.now %}
+  {% assign now_items = "" | split: "" %}
+  {% for n in site.data.now %}{% assign tx = n.text | strip %}{% if tx != "" %}{% assign now_items = now_items | push: n %}{% endif %}{% endfor %}
+  {% if now_items.size > 0 %}
   <section class="section" id="now">
     <h2 class="section__label"><span class="section__num">01</span>Currently</h2>
     <ul class="now">
-      {% for n in site.data.now %}{% if n.text == nil or n.text == "" %}{% continue %}{% endif %}
+      {% for n in now_items %}
       <li class="now__item">
         <span class="now__label">{{ n.label }}</span>
         <span class="now__text">{% if n.url %}<a href="{{ n.url }}">{{ n.text }}</a>{% else %}{{ n.text }}{% endif %}</span>
@@ -104,11 +106,12 @@ layout: default
   <section class="section section--quiet" id="contact">
     <h2 class="section__label"><span class="section__num">05</span>Contact</h2>
     <div class="contact">
-      {% if site.company_name != "" %}
+      {% assign company = site.company_name | strip %}
+      {% if company != "" %}
       {% assign note = site.company_note | strip %}{% assign last = note | slice: -1 %}{% if last == "." %}{% assign n = note.size | minus: 1 %}{% assign note = note | slice: 0, n %}{% endif %}
-      <p>{{ note }} {% if site.company_url != "" %}<a href="{{ site.company_url }}">{{ site.company_name }}</a>{% else %}{{ site.company_name }}{% endif %}.</p>
+      <p>{{ note }} {% include company-link.html %}.</p>
       {% endif %}
-      <p>{% if site.company_name != "" %}For that, talks or research{% else %}For talks, research or collaboration{% endif %}, write to <a href="mailto:{{ email }}">{{ site.resume_contact_email }}</a>. The rest is on the <a href="{{ '/cv/' | relative_url }}">CV</a>.</p>
+      <p>{% if company != "" %}For that, talks or research{% else %}For talks, research or collaboration{% endif %}, write to <a href="mailto:{{ email }}">{{ site.resume_contact_email }}</a>. The rest is on the <a href="{{ '/cv/' | relative_url }}">CV</a>.</p>
     </div>
   </section>
 

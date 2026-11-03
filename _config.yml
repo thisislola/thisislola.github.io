@@ -23,7 +23,8 @@ collections:
 defaults:
   - scope: { path: "", type: talks }
     values: { layout: deck }
-exclude: [README.md, Gemfile, Gemfile.lock, vendor]
+# Setting exclude replaces Jekyll's defaults, so they are repeated here.
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, vendor, gemfiles, .sass-cache, .jekyll-cache]
 
 # ── Homepage ──────────────────────────────────────────────────
 home_intro: >
@@ -33,7 +34,7 @@ home_intro: >
 
 # "Currently" list on the homepage lives in _data/now.yml
 
-# Independent work
+# Independent work (leave company_name blank to hide it)
 company_name: "via Emeriss in Norway / ENK"
 company_url:  "https://emeriss.no/"
 company_note: "I take on a small number of independent engagements alongside my day job."
@@ -43,7 +44,7 @@ resume_name:     "Lorena Carthy-Wilmot"
 resume_title:    "Digital Forensics & Cyber Security"
 resume_avatar:   true
 resume_contact_email:        "hei[at]lorenacw.com"
-resume_header_contact_info:  "Oslo, Norway • hei[at]lorenacw.com"
+location:                    "Oslo, Norway"   # used on the homepage, CV and footer
 resume_header_intro: "<p>I have a background in digital forensics and cybersecurity.</p>"
 
 # Toggle CV sections on/off

@@ -14,8 +14,8 @@ permalink: /cv/
       <p class="eyebrow">Curriculum vitae</p>
       <h1 class="cv-header__name" itemprop="name">{{ site.resume_name }}</h1>
       <p class="cv-header__title" itemprop="jobTitle">{{ site.resume_title }}</p>
-      <p class="cv-header__contact">{{ site.resume_header_contact_info }}</p>
-      {% if site.company_name != "" %}<p class="cv-header__contact">Independent work {% if site.company_url != "" %}<a href="{{ site.company_url }}">{{ site.company_name }}</a>{% else %}{{ site.company_name }}{% endif %}</p>{% endif %}
+      <p class="cv-header__contact">{{ site.location }} • {{ site.resume_contact_email }}</p>
+      {% assign company = site.company_name | strip %}{% if company != "" %}<p class="cv-header__contact">Independent work {% include company-link.html %}</p>{% endif %}
       <div class="cv-header__actions">
         {% if email %}<a class="btn" href="mailto:{{ email }}">Get in touch</a>{% endif %}
         <button class="btn btn--quiet" type="button" onclick="window.print()">Print / PDF</button>

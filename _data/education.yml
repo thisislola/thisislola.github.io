@@ -1,24 +1,24 @@
 # Degree
 
-- degree: FOR518 Mac and iOS Forensic Analysis and Incident Response. Certified: GIAC Mac and iOS Forensic Examiner (GIME).
+- degree: GIAC Mac and iOS Forensic Examiner (GIME).
   uni: SANS Institute
   year: 2026
-  summary: GIME 
+  summary: FOR518 Mac and iOS Forensic Analysis and Incident Response.
 
-- degree: FOR500 Windows Forensic Analysis. Certified: GIAC Forensic Examiner (GCFE)
+- degree: GIAC Forensic Examiner (GCFE)
   uni: SANS Institute
   year: 2022
-  summary: GCFE
+  summary: FOR500 Windows Forensic Analysis.
 
 - degree: MSc in Cybersecurity (Hons)
   uni: Teesside University
-  year: 2020-2022
-  summary: #
+  year: 2020
+  summary: 2020-2022
 
 - degree: BSc in Digital Forensics (Hons)
   uni: Noroff University College
-  year: 2016-2019
-  summary: IoT Lab Student Manager, Code Club Founder, Pi-Jam Organiser
+  year: 2016
+  summary: 2016-2019. IoT Lab Student Manager, Code Club Founder, Pi-Jam Organiser
 
 - degree: Griffeye Certified Analyst, Examiner and Manager.
   uni: Griffeye

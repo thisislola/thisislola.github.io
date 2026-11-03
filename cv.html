@@ -50,7 +50,8 @@ permalink: /cv/
       <article class="cv-item">
         <p class="cv-item__when">{{ p.year }}</p>
         <div>
-          <h3 class="cv-item__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+          {% assign d = nil %}{% if p.deck %}{% assign d = site.talks | where: "slug", p.deck | first %}{% endif %}
+          <h3 class="cv-item__title">{% if d %}<a href="{{ d.url | relative_url }}">{{ p.title }}</a>{% elsif p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
           <p class="cv-item__org">{{ p.event }}{% if p.place %} <span class="cv-item__place">· {{ p.place }}</span>{% endif %}</p>
           {% if p.authors %}<p class="cv-item__summary cv-item__summary--small">{{ p.authors }}</p>{% endif %}
           {% if p.type %}<span class="tag">{{ p.type }}</span>{% endif %}

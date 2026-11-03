@@ -1,0 +1,9 @@
+{%- comment -%}
+  Cover for a talk card: `cover:` image from front matter if set,
+  otherwise a typographic title card in one of the accent colours.
+{%- endcomment -%}
+{%- if include.talk.cover -%}
+<img class="talk-card__img" src="{{ include.talk.cover | relative_url }}" alt="" loading="lazy">
+{%- else -%}
+<span class="talk-card__img talk-card__img--type tone-{{ include.index | default: 0 | modulo: 4 }}" aria-hidden="true"><span>{{ include.talk.title }}</span></span>
+{%- endif -%}

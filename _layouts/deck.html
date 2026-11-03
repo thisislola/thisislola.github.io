@@ -1,0 +1,62 @@
+---
+layout: default
+---
+{%- comment -%}
+  Keynote "Export To → HTML" folder lives at assets/talks/<name>/ by default.
+  Override with `keynote: /some/other/path/` in the talk's front matter.
+{%- endcomment -%}
+{% if page.keynote %}{% assign deck_dir = page.keynote %}{% else %}{% assign deck_dir = "/assets/talks/" | append: page.slug | append: "/" %}{% endif %}
+{% assign deck_src = deck_dir | append: "/index.html" | replace: "//index.html", "/index.html" %}
+{% assign deck_rel = deck_src | remove_first: "/" %}
+{% assign deck_exists = false %}
+{% for f in site.static_files %}{% assign rel = f.path | remove_first: site.source | remove_first: "/" %}{% if rel == deck_rel %}{% assign deck_exists = true %}{% break %}{% endif %}{% endfor %}
+
+<div class="wrap deck-page">
+  <header class="deck-head">
+    <a class="post-header__back" href="{{ '/talks/' | relative_url }}">← Talks</a>
+    <p class="eyebrow">{% if page.event %}{{ page.event }}{% if page.place %}, {{ page.place }}{% endif %} · {% endif %}{{ page.date | date: "%B %Y" }}</p>
+    <h1 class="deck-head__title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="deck-head__sub">{{ page.subtitle }}</p>{% endif %}
+  </header>
+
+  {% if deck_exists %}
+  <div class="deck" data-deck>
+    <div class="deck__stage">
+      <iframe class="deck__frame" src="{{ deck_src | relative_url }}" title="{{ page.title }}: slides" allow="fullscreen; autoplay" allowfullscreen></iframe>
+    </div>
+    <div class="deck__bar">
+      <span class="deck__hint"><kbd>←</kbd> <kbd>→</kbd> or click the slides to advance</span>
+      <span class="deck__spacer"></span>
+      {% if page.pdf %}<a class="deck__btn" href="{{ page.pdf | relative_url }}" download>PDF</a>{% endif %}
+      <a class="deck__btn" href="{{ deck_src | relative_url }}" target="_blank" rel="noopener">New tab ↗</a>
+      <button class="deck__btn deck__btn--solid" type="button" data-fullscreen>Fullscreen</button>
+    </div>
+  </div>
+  {% else %}
+  <div class="deck deck--empty"><div class="deck__stage"><p>Slides coming soon.</p></div></div>
+  {% endif %}
+
+  {% if content != "" %}
+  <div class="prose deck-notes">{{ content }}</div>
+  {% endif %}
+</div>
+
+{% if deck_exists %}
+<script>
+(function () {
+  var deck = document.querySelector('[data-deck]');
+  var frame = deck.querySelector('iframe');
+  var btn = deck.querySelector('[data-fullscreen]');
+  btn.addEventListener('click', function () {
+    var el = deck.querySelector('.deck__stage');
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (el.requestFullscreen) el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    focusSlides();
+  });
+  // Keynote's player listens for keys inside the iframe, so keep focus there.
+  function focusSlides() { try { frame.contentWindow.focus(); } catch (_) { frame.focus(); } }
+  frame.addEventListener('load', function () { deck.classList.add('is-ready'); focusSlides(); });
+})();
+</script>
+{% endif %}

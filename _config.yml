@@ -15,6 +15,16 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# Slide decks: one file per talk in _talks/, slides in assets/talks/<name>/
+collections:
+  talks:
+    output: true
+    permalink: /talks/:name/
+defaults:
+  - scope: { path: "", type: talks }
+    values: { layout: deck }
+exclude: [README.md, Gemfile, Gemfile.lock, vendor]
+
 # ── Homepage ──────────────────────────────────────────────────
 home_intro: >
   <p>Digital forensics and cyber security. Head of Security Strategy (Europe) at

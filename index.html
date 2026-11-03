@@ -91,12 +91,13 @@ layout: default
       <ul class="list">
         {% for p in site.data.presentations limit: 3 %}
         <li class="list__item">
-          <p class="list__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
-          <p class="list__meta">{{ p.year }} · {{ p.type }} · {{ p.event }}{% if p.place %}, {{ p.place }}{% endif %}</p>
+          {% assign d = nil %}{% if p.deck %}{% assign d = site.talks | where: "slug", p.deck | first %}{% endif %}
+          <p class="list__title">{% if d %}<a href="{{ d.url | relative_url }}">{{ p.title }}</a>{% elsif p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+          <p class="list__meta">{{ p.year }} · {{ p.type }} · {{ p.event }}{% if p.place %}, {{ p.place }}{% endif %}{% if d %} · <a href="{{ d.url | relative_url }}">Slides</a>{% endif %}</p>
         </li>
         {% endfor %}
       </ul>
-      <a class="more" href="{{ '/cv/#speaking' | relative_url }}">All talks &amp; papers →</a>
+      <a class="more" href="{{ '/talks/' | relative_url }}">All talks &amp; slides →</a>
     </div>
   </section>
 

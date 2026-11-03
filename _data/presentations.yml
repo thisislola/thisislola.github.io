@@ -5,6 +5,7 @@
 #   year:   year
 #   type:   Presentation | Panelist | Research Paper
 #   url:    optional link
+#   deck:   name of a slide deck in _talks/ (e.g. endpoint-that-walks)
 
 - title: "The Endpoint that walks. Mobile Devices as Physical Security Risks"
   event: Sikkerhetsfestivalen

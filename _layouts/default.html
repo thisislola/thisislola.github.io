@@ -31,6 +31,7 @@
     <nav class="nav" aria-label="Primary">
       <a class="nav__link" href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
       <a class="nav__link" href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' or page.layout == 'post' %}aria-current="page"{% endif %}>Notes</a>
+      <a class="nav__link" href="{{ '/talks/' | relative_url }}" {% if page.url contains '/talks' %}aria-current="page"{% endif %}>Talks</a>
       <a class="nav__link" href="{{ '/cv/' | relative_url }}" {% if page.url contains '/cv' %}aria-current="page"{% endif %}>CV</a>
     </nav>
   </div>

@@ -34,8 +34,8 @@ home_intro: >
 
 # "Currently" list on the homepage lives in _data/now.yml
 
-# Independent work (leave company_name blank to hide it)
-company_name: "via Emeriss in Norway / ENK"
+# Independent work
+company_name: "via Emeriss in Norway and my own ENK."
 company_url:  "https://emeriss.no/"
 company_note: "I take on a small number of independent engagements alongside my day job."
 

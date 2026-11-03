@@ -101,17 +101,27 @@ button { font:inherit; cursor:pointer; }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
 // ── Home ────────────────────────────────────────────────────
-.intro { padding:4rem 0 3.5rem; max-width:44rem; @include from($bp-md){ padding:6rem 0 5rem; } }
+.intro { display:grid; gap:2.5rem; padding:4rem 0 3.5rem;
+  @include from($bp-md){ grid-template-columns:minmax(0,1fr) 17rem; gap:5rem; align-items:end; padding:6rem 0 4.5rem; } }
 .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
-.intro__text { font-size:clamp(1.2rem,2.2vw,1.4rem); line-height:1.55; letter-spacing:-.012em; color:var(--ink-soft);
+.intro__text { max-width:40rem; font-size:clamp(1.2rem,2.2vw,1.45rem); line-height:1.55; letter-spacing:-.012em; color:var(--ink-soft);
   strong { color:var(--ink); font-weight:600; }
   p + p { margin-top:1rem; } }
 
 .section { display:grid; gap:1.25rem; padding:2.75rem 0; border-top:1px solid var(--line);
   @include from($bp-md){ grid-template-columns:12rem 1fr; gap:3rem; padding:3.5rem 0; } }
 .section:last-child { margin-bottom:3rem; }
-.section__label { @include eyebrow; font-size:.85rem; color:var(--ink); font-weight:600; letter-spacing:-.005em; margin:0;
+.facts { display:grid; gap:.7rem; font-size:.88rem; padding-top:1.25rem; border-top:2px solid var(--ink);
+  @include from($bp-md){ border-top:0; padding-top:0; padding-left:1.5rem; border-left:1px solid var(--line); } }
+.facts__row { display:grid; grid-template-columns:5.5rem 1fr; gap:.75rem; }
+.facts dt { color:var(--muted); }
+.facts dd { margin:0; color:var(--ink); }
+.facts__links { display:flex; flex-wrap:wrap; gap:.15rem .75rem; a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px; &:hover { text-decoration-color:currentColor; } } }
+
+.section__label { @include eyebrow; font-size:.85rem; color:var(--ink); font-weight:600; letter-spacing:-.005em; margin:0; display:flex; gap:.6rem; align-items:baseline;
   @include from($bp-md){ position:sticky; top:5.5rem; align-self:start; } }
+
+.section__num { @include mono; font-size:.72rem; font-weight:400; color:var(--accent); }
 
 .now { list-style:none; padding:0; display:grid; gap:.9rem; }
 .now__item { display:grid; gap:.1rem; @include from($bp-sm){ grid-template-columns:6.5rem 1fr; gap:1rem; } }
@@ -123,6 +133,14 @@ button { font:inherit; cursor:pointer; }
 .list__title { font-weight:600; letter-spacing:-.01em; line-height:1.35; a { color:var(--ink); } a:hover { color:var(--accent); } }
 .list__text { color:var(--ink-soft); margin-top:.25rem; max-width:$measure; }
 .list__meta { font-size:.85rem; color:var(--muted); margin-top:.25rem; }
+
+.tiles { list-style:none; padding:0; display:grid; gap:1rem; @include from($bp-sm){ grid-template-columns:repeat(2,1fr); } }
+.tile__link { display:flex; flex-direction:column; gap:.4rem; height:100%; padding:1.4rem 1.5rem; border-radius:14px; background:var(--bg-soft); color:var(--ink);
+  transition:background .15s ease; }
+a.tile__link:hover { text-decoration:none; background:color-mix(in srgb, var(--bg-soft) 70%, var(--line)); .tile__title { color:var(--accent); } }
+.tile__meta { display:flex; justify-content:space-between; font-size:.8rem; color:var(--muted); }
+.tile__title { font-weight:600; font-size:1.05rem; letter-spacing:-.01em; transition:color .15s ease; }
+.tile__text { color:var(--ink-soft); font-size:.94rem; }
 
 .contact { color:var(--ink-soft); max-width:$measure; p + p { margin-top:.75rem; } }
 
@@ -136,6 +154,7 @@ button { font:inherit; cursor:pointer; }
 .post-row__title { font-size:1.15rem; font-weight:600; letter-spacing:-.02em; line-height:1.25; transition:color .15s ease; }
 .post-row__sub { color:var(--ink-soft); font-size:.98rem; }
 .post-row__tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.5rem; }
+.post-row__aside { display:flex; align-items:baseline; gap:.4rem; flex-wrap:wrap; .post-row__date { margin-left:.4rem; } }
 .post-row__date { font-size:.85rem; color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums; }
 
 .page-intro { padding:4rem 0 2.5rem; @include from($bp-md){ padding:6rem 0 3rem; } }

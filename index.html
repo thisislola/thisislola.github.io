@@ -5,13 +5,32 @@ layout: default
 <div class="wrap">
 
   <header class="intro">
-    <h1 class="sr-only">{{ site.resume_name }}</h1>
-    <div class="intro__text">{{ site.home_intro }}</div>
+    <div>
+      <h1 class="sr-only">{{ site.resume_name }}</h1>
+      <div class="intro__text">{{ site.home_intro }}</div>
+    </div>
+
+    {% assign now_job = site.data.experience | first %}
+    {% assign now_co = now_job.company | split: ' | ' %}
+    <dl class="facts">
+      <div class="facts__row"><dt>Based in</dt><dd>Oslo, Norway</dd></div>
+      <div class="facts__row"><dt>Now</dt><dd>{{ now_co[0] }}</dd></div>
+      <div class="facts__row"><dt>Before</dt><dd>{% for job in site.data.experience offset: 1 %}{% assign co = job.company | split: ' | ' %}{{ co[0] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>
+      {% assign certs = site.data.education | where_exp: "e", "e.summary" %}
+      {% if certs.size > 0 %}<div class="facts__row"><dt>Certified</dt><dd>{% for e in certs %}{{ e.summary }}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>{% endif %}
+      {% assign s = site.resume_social_links %}
+      <div class="facts__row"><dt>Elsewhere</dt><dd class="facts__links">
+        {% if s.resume_github_url %}<a href="{{ s.resume_github_url }}" rel="me">GitHub</a>{% endif %}
+        {% if s.resume_bluesky_url %}<a href="{{ s.resume_bluesky_url }}" rel="me">Bluesky</a>{% endif %}
+        {% if s.resume_linkedin_url %}<a href="{{ s.resume_linkedin_url }}" rel="me">LinkedIn</a>{% endif %}
+        {% if s.resume_medium_url %}<a href="{{ s.resume_medium_url }}" rel="me">Medium</a>{% endif %}
+      </dd></div>
+    </dl>
   </header>
 
   {% if site.data.now %}
   <section class="section" id="now">
-    <h2 class="section__label">Currently</h2>
+    <h2 class="section__label"><span class="section__num">01</span>Currently</h2>
     <ul class="now">
       {% for n in site.data.now %}
       <li class="now__item">
@@ -24,7 +43,7 @@ layout: default
   {% endif %}
 
   <section class="section" id="notes">
-    <h2 class="section__label">Notes</h2>
+    <h2 class="section__label"><span class="section__num">02</span>Notes</h2>
     <div>
       {% assign posts = site.posts | sort: 'date' | reverse %}
       {% if posts.size > 0 %}
@@ -35,7 +54,10 @@ layout: default
             <span class="post-row__title">{{ post.title }}</span>
             {% if post.subtitle %}<span class="post-row__sub">{{ post.subtitle }}</span>{% endif %}
           </a>
-          <time class="post-row__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time>
+          <span class="post-row__aside">
+            {% for t in post.tags limit: 3 %}<span class="tag">{{ t }}</span>{% endfor %}
+            <time class="post-row__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time>
+          </span>
         </li>
         {% endfor %}
       </ul>
@@ -47,13 +69,16 @@ layout: default
   {% assign has_projects = false %}{% for pr in site.data.projects %}{% if pr.project %}{% assign has_projects = true %}{% endif %}{% endfor %}
   {% if has_projects %}
   <section class="section" id="projects">
-    <h2 class="section__label">Projects &amp; tools</h2>
-    <ul class="list">
+    <h2 class="section__label"><span class="section__num">03</span>Projects &amp; tools</h2>
+    <ul class="tiles">
       {% for pr in site.data.projects %}{% if pr.project %}
-      <li class="list__item">
-        <p class="list__title">{% if pr.url and pr.url != '#' %}<a href="{{ pr.url }}">{{ pr.project }}</a>{% else %}{{ pr.project }}{% endif %}</p>
-        {% if pr.description %}<p class="list__text">{{ pr.description }}</p>{% endif %}
-        <p class="list__meta">{{ pr.duration }}</p>
+      {% assign linked = false %}{% if pr.url and pr.url != '#' %}{% assign linked = true %}{% endif %}
+      <li class="tile">
+        {% if linked %}<a class="tile__link" href="{{ pr.url }}">{% else %}<div class="tile__link">{% endif %}
+          <span class="tile__meta">{{ pr.duration }}{% if linked %}<span aria-hidden="true">↗</span>{% endif %}</span>
+          <span class="tile__title">{{ pr.project }}</span>
+          {% if pr.description %}<span class="tile__text">{{ pr.description }}</span>{% endif %}
+        {% if linked %}</a>{% else %}</div>{% endif %}
       </li>
       {% endif %}{% endfor %}
     </ul>
@@ -61,22 +86,22 @@ layout: default
   {% endif %}
 
   <section class="section" id="talks">
-    <h2 class="section__label">Talks &amp; papers</h2>
+    <h2 class="section__label"><span class="section__num">04</span>Talks &amp; papers</h2>
     <div>
       <ul class="list">
-        {% for p in site.data.presentations limit: 5 %}
+        {% for p in site.data.presentations limit: 3 %}
         <li class="list__item">
           <p class="list__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
-          <p class="list__meta">{{ p.type }} · {{ p.event }}{% if p.place %}, {{ p.place }}{% endif %} · {{ p.year }}</p>
+          <p class="list__meta">{{ p.year }} · {{ p.type }} · {{ p.event }}{% if p.place %}, {{ p.place }}{% endif %}</p>
         </li>
         {% endfor %}
       </ul>
-      <a class="more" href="{{ '/cv/#speaking' | relative_url }}">Full list on the CV →</a>
+      <a class="more" href="{{ '/cv/#speaking' | relative_url }}">All talks &amp; papers →</a>
     </div>
   </section>
 
   <section class="section section--quiet" id="contact">
-    <h2 class="section__label">Contact</h2>
+    <h2 class="section__label"><span class="section__num">05</span>Contact</h2>
     <div class="contact">
       {% if site.company_name != "" %}
       <p>{{ site.company_note }} These go through {% if site.company_url != "" %}<a href="{{ site.company_url }}">{{ site.company_name }}</a>{% else %}{{ site.company_name }}{% endif %}.</p>

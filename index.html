@@ -2,95 +2,34 @@
 layout: default
 ---
 {% assign email = site.resume_contact_email | replace: '[at]', '@' %}
+<div class="wrap">
 
-<section class="slide slide--hero">
-  <div class="wrap">
-    <div class="hero">
-      <div class="hero__text">
-        <p class="eyebrow fade">{{ site.resume_title }} · Oslo</p>
-        <h1 class="hero__title fade">{{ site.home_heading }}</h1>
-        <div class="hero__lead fade">{{ site.home_intro }}</div>
-        <div class="hero__actions fade">
-          <a class="btn" href="{{ '/cv/' | relative_url }}">View CV</a>
-          {% if email %}<a class="btn btn--quiet" href="mailto:{{ email }}">Get in touch <span aria-hidden="true">→</span></a>{% endif %}
-        </div>
-      </div>
-      {% if site.resume_avatar %}
-      <img class="hero__portrait fade" src="{{ '/images/avatar.jpg' | relative_url }}" alt="Portrait of {{ site.resume_name }}" width="320" height="320">
-      {% endif %}
-    </div>
-  </div>
-</section>
+  <header class="intro">
+    <h1 class="sr-only">{{ site.resume_name }}</h1>
+    <div class="intro__text">{{ site.home_intro }}</div>
+  </header>
 
-{% if site.home_focus %}
-<section class="slide">
-  <div class="wrap slide__grid">
-    <header class="slide__label"><span class="slide__num">01</span>Focus</header>
+  {% if site.data.now %}
+  <section class="section" id="now">
+    <h2 class="section__label">Currently</h2>
+    <ul class="now">
+      {% for n in site.data.now %}
+      <li class="now__item">
+        <span class="now__label">{{ n.label }}</span>
+        <span class="now__text">{% if n.url %}<a href="{{ n.url }}">{{ n.text }}</a>{% else %}{{ n.text }}{% endif %}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <section class="section" id="notes">
+    <h2 class="section__label">Notes</h2>
     <div>
-      <h2 class="slide__title">What I work on.</h2>
-      <ol class="focus">
-        {% for f in site.home_focus %}
-        <li class="focus__item">
-          <h3 class="focus__title">{{ f.title }}</h3>
-          <p class="focus__text">{{ f.text }}</p>
-        </li>
-        {% endfor %}
-      </ol>
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<section class="slide">
-  <div class="wrap slide__grid">
-    <header class="slide__label"><span class="slide__num">02</span>Experience</header>
-    <div>
-      <h2 class="slide__title">Where I’ve worked.</h2>
-      <ol class="timeline">
-        {% for job in site.data.experience %}
-        {% assign co = job.company | split: ' | ' %}
-        <li class="timeline__row">
-          <span class="timeline__when">{{ job.duration }}</span>
-          <span class="timeline__what">
-            <strong>{{ job.position }}</strong>
-            <span class="timeline__where">{{ co[0] }}</span>
-          </span>
-        </li>
-        {% endfor %}
-      </ol>
-      <a class="more" href="{{ '/cv/#experience' | relative_url }}">Full experience →</a>
-    </div>
-  </div>
-</section>
-
-<section class="slide">
-  <div class="wrap slide__grid">
-    <header class="slide__label"><span class="slide__num">03</span>Speaking &amp; research</header>
-    <div>
-      <h2 class="slide__title">Talks, panels and papers.</h2>
-      <ul class="cards">
-        {% for p in site.data.presentations limit: 4 %}
-        <li class="card">
-          <p class="card__meta">{{ p.type }} · {{ p.year }}</p>
-          <h3 class="card__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
-          <p class="card__where">{{ p.event }}{% if p.place %}, {{ p.place }}{% endif %}</p>
-        </li>
-        {% endfor %}
-      </ul>
-      <a class="more" href="{{ '/cv/#speaking' | relative_url }}">All talks &amp; papers →</a>
-    </div>
-  </div>
-</section>
-
-<section class="slide">
-  <div class="wrap slide__grid">
-    <header class="slide__label"><span class="slide__num">04</span>Writing</header>
-    <div>
-      <h2 class="slide__title">Notes from the field.</h2>
       {% assign posts = site.posts | sort: 'date' | reverse %}
       {% if posts.size > 0 %}
       <ul class="post-list">
-        {% for post in posts limit: 3 %}
+        {% for post in posts limit: 6 %}
         <li class="post-row">
           <a class="post-row__link" href="{{ post.url | relative_url }}">
             <span class="post-row__title">{{ post.title }}</span>
@@ -100,19 +39,50 @@ layout: default
         </li>
         {% endfor %}
       </ul>
-      <a class="more" href="{{ '/blog/' | relative_url }}">All writing →</a>
-      {% else %}<p class="empty-note">The first post is on its way.</p>{% endif %}
+      {% if posts.size > 6 %}<a class="more" href="{{ '/blog/' | relative_url }}">All notes →</a>{% endif %}
+      {% else %}<p class="empty-note">The first note is on its way.</p>{% endif %}
     </div>
-  </div>
-</section>
+  </section>
 
-{% if email %}
-<section class="slide slide--closing">
-  <div class="wrap">
-    <p class="eyebrow">Contact</p>
-    <h2 class="closing__title">Let’s talk.</h2>
-    <p class="closing__lead">Speaking invitations, research collaborations, or a conversation about mobile threats.</p>
-    <a class="closing__mail" href="mailto:{{ email }}">{{ site.resume_contact_email }}</a>
-  </div>
-</section>
-{% endif %}
+  {% assign has_projects = false %}{% for pr in site.data.projects %}{% if pr.project %}{% assign has_projects = true %}{% endif %}{% endfor %}
+  {% if has_projects %}
+  <section class="section" id="projects">
+    <h2 class="section__label">Projects &amp; tools</h2>
+    <ul class="list">
+      {% for pr in site.data.projects %}{% if pr.project %}
+      <li class="list__item">
+        <p class="list__title">{% if pr.url and pr.url != '#' %}<a href="{{ pr.url }}">{{ pr.project }}</a>{% else %}{{ pr.project }}{% endif %}</p>
+        {% if pr.description %}<p class="list__text">{{ pr.description }}</p>{% endif %}
+        <p class="list__meta">{{ pr.duration }}</p>
+      </li>
+      {% endif %}{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <section class="section" id="talks">
+    <h2 class="section__label">Talks &amp; papers</h2>
+    <div>
+      <ul class="list">
+        {% for p in site.data.presentations limit: 5 %}
+        <li class="list__item">
+          <p class="list__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+          <p class="list__meta">{{ p.type }} · {{ p.event }}{% if p.place %}, {{ p.place }}{% endif %} · {{ p.year }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      <a class="more" href="{{ '/cv/#speaking' | relative_url }}">Full list on the CV →</a>
+    </div>
+  </section>
+
+  <section class="section section--quiet" id="contact">
+    <h2 class="section__label">Contact</h2>
+    <div class="contact">
+      {% if site.company_name != "" %}
+      <p>{{ site.company_note }} These go through {% if site.company_url != "" %}<a href="{{ site.company_url }}">{{ site.company_name }}</a>{% else %}{{ site.company_name }}{% endif %}.</p>
+      {% endif %}
+      <p>{% if site.company_name != "" %}For that, talks or research{% else %}For talks, research or collaboration{% endif %}, write to <a href="mailto:{{ email }}">{{ site.resume_contact_email }}</a>. The rest is on the <a href="{{ '/cv/' | relative_url }}">CV</a>.</p>
+    </div>
+  </section>
+
+</div>

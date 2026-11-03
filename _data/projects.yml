@@ -1,7 +1,13 @@
-# Projects
+# Projects & tools
+#   project, role, duration, url (optional), description (optional)
 
-- project: Collecting Paths for iOS Forensics Artifacts 
+- project: iOS forensic artifact paths
   role: Collector
   duration: Ongoing
-  url: "#"
-  description: #
+  description: A working collection of where iOS keeps the artifacts that matter in an investigation.
+
+- project: mdlsx
+  role: Author
+  duration: 2026
+  url: https://github.com/thisislola/mdlsx
+  description: A small bash wrapper around macOS mdls that prints a plain-language description next to each kMDItem attribute.

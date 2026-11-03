@@ -4,7 +4,7 @@ layout: default
 <div class="wrap">
   <article class="article" itemscope itemtype="https://schema.org/BlogPosting">
     <header class="post-header">
-      <a class="post-header__back" href="{{ '/blog/' | relative_url }}">← Writing</a>
+      <a class="post-header__back" href="{{ '/blog/' | relative_url }}">← Notes</a>
       <p class="eyebrow">
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
         · {% if page.reading_time %}{{ page.reading_time }}{% else %}{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read{% endif %}

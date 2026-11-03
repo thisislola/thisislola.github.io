@@ -1,0 +1,17 @@
+# "Currently" on the homepage. Keep it short; update as things change.
+#   label: one word (Learning, Building, Researching, Speaking...)
+#   text:  one line
+#   url:   optional link
+
+- label: Learning
+  text: "SANS FOR518: Mac and iOS forensic analysis and incident response."
+
+- label: Building
+  text: "A collection of file paths for iOS forensic artifacts."
+
+- label: Tooling
+  text: "mdlsx, a wrapper for mdls that explains every kMDItem attribute."
+  url: https://github.com/thisislola/mdlsx
+
+- label: Speaking
+  text: "The Endpoint that walks: mobile devices as physical security risks, Sikkerhetsfestivalen 2026."

@@ -15,20 +15,21 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# ── Homepage (intro + recent posts + CV link) ─────────────────
-home_heading: "Researching threats on the most overlooked endpoint: <em>your phone</em>."
+# ── Homepage ──────────────────────────────────────────────────
 home_intro: >
-  <p>I work at the intersection of digital forensics and cybersecurity.
-  I'm Head of Security Strategy (Europe) at <a href="https://iverify.io">iVerify</a>.</p>
+  <p>I work in digital forensics and cyber security, currently as Head of Security
+  Strategy (Europe) at <a href="https://iverify.io">iVerify</a>. Most of my curiosity
+  goes into <strong>iOS forensics</strong> and <strong>mobile threat hunting</strong>:
+  where the artifacts live, what they can tell you, and how to find what shouldn't be there.
+  This is where I keep notes on what I'm learning.</p>
 
-# Three short "what I do" statements shown on the homepage.
-home_focus:
-  - title: "Mobile threat research"
-    text: "Spyware, targeted intrusions and the gaps most MDM and EDR stacks weren't designed to cover."
-  - title: "Digital forensics"
-    text: "Digital investigations for the Norwegian Police and corporate cases, plus forensic methodology development."
-  - title: "Protecting people at risk"
-    text: "Security for journalists and the sensitive information they handle, in defence of free expression."
+# "Currently" list on the homepage lives in _data/now.yml
+
+# Independent work, shown as a quiet note near the bottom of the homepage
+# and on the CV. Leave company_name empty to hide it.
+company_name: ""
+company_url:  ""
+company_note: "I take on a small number of independent engagements alongside my day job: iOS forensic analysis, mobile threat assessments and training."
 
 # ── CV (content lives in _data/*.yml) ─────────────────────────
 resume_name:     "Lorena Carthy-Wilmot"

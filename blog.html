@@ -1,34 +1,32 @@
 ---
 layout: default
-title: Blog
+title: Writing
 permalink: /blog/
 ---
 <div class="wrap">
-  <div class="col">
 
-    <section class="hero" style="padding-bottom:.5rem">
-      <p class="hero__kicker">Blog</p>
-      <h1 class="hero__title" style="font-size:clamp(2rem,5vw,3rem)">Notes on forensics &amp; security.</h1>
-      <p class="hero__lead">Field notes, research, and the occasional deep dive into mobile threats, digital forensics, and protecting the people behind the data.</p>
-    </section>
+  <header class="page-intro">
+    <p class="eyebrow">Writing</p>
+    <h1 class="page-intro__title">Notes on forensics &amp; security.</h1>
+    <p class="page-intro__lead">Field notes, research, and the occasional deep dive into mobile threats, digital forensics, and protecting the people behind the data.</p>
+  </header>
 
-    {% assign posts = site.posts | sort: 'date' | reverse %}
-    {% if posts.size > 0 %}
-    <ul class="post-list">
-      {% for post in posts %}
-      <li class="post-row reveal">
-        <div class="post-row__date">{{ post.date | date: "%b %-d, %Y" }}</div>
-        <div>
-          <h2 class="post-row__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          {% if post.excerpt %}<p class="post-row__excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>{% endif %}
-          {% if post.tags.size > 0 %}<div class="post-row__tags">{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>{% endif %}
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    <p class="empty-note">Nothing published yet. Check back soon.</p>
-    {% endif %}
+  {% assign posts = site.posts | sort: 'date' | reverse %}
+  {% if posts.size > 0 %}
+  <ul class="post-list post-list--full">
+    {% for post in posts %}
+    <li class="post-row">
+      <a class="post-row__link" href="{{ post.url | relative_url }}">
+        <span class="post-row__title">{{ post.title }}</span>
+        {% if post.subtitle %}<span class="post-row__sub">{{ post.subtitle }}</span>{% endif %}
+        {% if post.tags.size > 0 %}<span class="post-row__tags">{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}
+      </a>
+      <time class="post-row__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">Nothing published yet. Check back soon.</p>
+  {% endif %}
 
-  </div>
 </div>

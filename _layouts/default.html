@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15140f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)">
   <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,400..500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
   <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
@@ -27,12 +27,11 @@
 
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="{{ '/' | relative_url }}">{{ site.resume_name }}<span class="brand__dot"> </span></a>
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.resume_name }}</a>
     <nav class="nav" aria-label="Primary">
-      <a class="nav__link" href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
-      <a class="nav__link" href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' or page.layout == 'post' %}aria-current="page"{% endif %}>Blog</a>
+      <a class="nav__link" href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Work</a>
       <a class="nav__link" href="{{ '/cv/' | relative_url }}" {% if page.url contains '/cv' %}aria-current="page"{% endif %}>CV</a>
-      <span class="socials">{{ socials }}</span>
+      <a class="nav__link" href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' or page.layout == 'post' %}aria-current="page"{% endif %}>Writing</a>
     </nav>
   </div>
 </header>
@@ -41,13 +40,7 @@
 
 <footer class="site-footer">
   <div class="wrap site-footer__inner">
-    <div>
-      <div class="site-footer__name">{{ site.resume_name }}</div>
-      <p class="site-footer__meta">
-        {{ site.resume_title }}{% if site.resume_header_contact_info %}<br>{{ site.resume_header_contact_info }}{% endif %}<br>
-        <a href="{{ '/feed.xml' | relative_url }}">RSS</a> · © {{ site.time | date: '%Y' }} {{ site.resume_name }}
-      </p>
-    </div>
+    <p class="site-footer__meta">© {{ site.time | date: '%Y' }} {{ site.resume_name }} · Oslo, Norway · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
     <div class="socials">{{ socials }}</div>
   </div>
 </footer>

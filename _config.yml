@@ -19,7 +19,16 @@ plugins:
 home_heading: "Researching threats on the most overlooked endpoint: <em>your phone</em>."
 home_intro: >
   <p>I work at the intersection of digital forensics and cybersecurity.
-  I'm Head of Security Strategy (Europe) at <a href="https://iverify.io">iVerify.</a></p>
+  I'm Head of Security Strategy (Europe) at <a href="https://iverify.io">iVerify</a>.</p>
+
+# Three short "what I do" statements shown on the homepage.
+home_focus:
+  - title: "Mobile threat research"
+    text: "Spyware, targeted intrusions and the gaps most MDM and EDR stacks weren't designed to cover."
+  - title: "Digital forensics"
+    text: "Digital investigations for the Norwegian Police and corporate cases, plus forensic methodology development."
+  - title: "Protecting people at risk"
+    text: "Security for journalists and the sensitive information they handle, in defence of free expression."
 
 # ── CV (content lives in _data/*.yml) ─────────────────────────
 resume_name:     "Lorena Carthy-Wilmot"
@@ -35,7 +44,7 @@ resume_section_education:     true
 resume_section_presentations: true
 resume_section_projects:      true
 resume_section_associations:  true
-resume_section_interests:     true
+resume_section_interests:     false   # add items to _data/interests.yml, then set to true
 
 resume_social_links:
   resume_github_url:   "https://github.com/thisislola"

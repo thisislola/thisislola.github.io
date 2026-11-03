@@ -1,38 +1,49 @@
 # Presentations and Research
+#   title:  name of the talk / paper
+#   event:  where it was given
+#   place:  city / country (optional)
+#   year:   year
+#   type:   Presentation | Panelist | Research Paper
+#   url:    optional link
 
-- award: 'The Endpoint that walks. Mobile Devices as Physical Security Risks'
-  organization: Sikkerhetsfestivalen 2026
-  year: Lillehammer 2025
-  summary: Presentation
-  link: "presentations"
+- title: "The Endpoint that walks. Mobile Devices as Physical Security Risks"
+  event: Sikkerhetsfestivalen
+  place: Lillehammer
+  year: 2026
+  type: Presentation
 
-- award: The Ripple Effect - Why journalists' cybersecurity affects everyone
-  organization: Sikkerhetsfestivalen 2025
-  year: Lillehammer 2025
-  summary: Presentation
-  link: "presentations"
-  
-- award: Nordic Ukrainian Advocacy Summit (NUAS) 2025
-  organization: Ukrainian Association in Norway
-  year: "Disinformation and cyber security threats"
-  summary: Panelist
+- title: "The Ripple Effect: Why journalists' cybersecurity affects everyone"
+  event: Sikkerhetsfestivalen
+  place: Lillehammer
+  year: 2025
+  type: Presentation
 
-- award: Leaders of Building Cyber Resilience
-  organization: Next IT CISO Conferance
-  year: Noordwijk aan Zee, Netherlands 2023
-  summary: Panelist
+- title: Disinformation and cyber security threats
+  event: Nordic Ukrainian Advocacy Summit (NUAS), Ukrainian Association in Norway
+  year: 2025
+  type: Panelist
 
-- award: The big gap, Mobile Forensics
-  organization: NDC{Security}
-  year: Oslo 2023
-  summary: Presentation
+- title: Leaders of Building Cyber Resilience
+  event: Next IT CISO Conference
+  place: Noordwijk aan Zee, Netherlands
+  year: 2023
+  type: Panelist
 
-- award: Committing the perfect crime - A teaching perspective (Carthy, L., Øvensen, E., Little, R., Sutherland, I. & Read, H.)
-  organization: ECCWS 2018
-  year: 17th European Conference on Cyber Warfare and Security, 2018
-  summary: Research Paper
+- title: "The big gap: Mobile Forensics"
+  event: "NDC { Security }"
+  place: Oslo
+  year: 2023
+  type: Presentation
 
-- award: Forensic analysis of privacy-focused mobile browsers in Android Devices (Carthy, L., Jernslett, R., Little, R.)
-  organization: BSides Oslo 2019
-  year: Oslo 2019
-  summary: Research Paper
+- title: Forensic analysis of privacy-focused mobile browsers in Android Devices
+  authors: Carthy, L., Jernslett, R., Little, R.
+  event: BSides Oslo
+  place: Oslo
+  year: 2019
+  type: Research Paper
+
+- title: "Committing the perfect crime: A teaching perspective"
+  authors: Carthy, L., Øvensen, E., Little, R., Sutherland, I. & Read, H.
+  event: 17th European Conference on Cyber Warfare and Security (ECCWS)
+  year: 2018
+  type: Research Paper

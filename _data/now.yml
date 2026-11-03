@@ -3,8 +3,8 @@
 #   text:  one line
 #   url:   optional link
 
-- label: Learning
-  text: "SANS FOR518: Mac and iOS forensic analysis and incident response."
+- label: Training
+  text: "OBTS#v9"
 
 - label: Building
   text: "A collection of file paths for iOS forensic artifacts."
@@ -14,4 +14,4 @@
   url: https://github.com/thisislola/mdlsx
 
 - label: Speaking
-  text: "The Endpoint that walks: mobile devices as physical security risks, Sikkerhetsfestivalen 2026."
+  text: ""

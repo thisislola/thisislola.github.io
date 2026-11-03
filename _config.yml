@@ -45,6 +45,7 @@ resume_title:    "Digital Forensics & Cyber Security"
 resume_avatar:   true
 resume_contact_email:        "hei[at]lorenacw.com"
 location:                    "Oslo, Norway"   # used on the homepage, CV and footer
+certifications:              "GIME, GCFE"     # shown as "Certified" on the homepage
 resume_header_intro: "<p>I have a background in digital forensics and cybersecurity.</p>"
 
 # Toggle CV sections on/off

@@ -16,8 +16,7 @@ layout: default
       <div class="facts__row"><dt>Based in</dt><dd>{{ site.location }}</dd></div>
       <div class="facts__row"><dt>Now</dt><dd>{{ now_co[0] }}</dd></div>
       <div class="facts__row"><dt>Before</dt><dd>{% for job in site.data.experience offset: 1 %}{% assign co = job.company | split: ' | ' %}{{ co[0] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>
-      {% assign certs = site.data.education | where_exp: "e", "e.summary" %}
-      {% if certs.size > 0 %}<div class="facts__row"><dt>Certified</dt><dd>{% for e in certs %}{{ e.summary }}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>{% endif %}
+      {% if site.certifications %}<div class="facts__row"><dt>Certified</dt><dd>{{ site.certifications }}</dd></div>{% endif %}
       {% assign s = site.resume_social_links %}
       <div class="facts__row"><dt>Elsewhere</dt><dd class="facts__links">
         {% if s.resume_github_url %}<a href="{{ s.resume_github_url }}" rel="me">GitHub</a>{% endif %}

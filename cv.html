@@ -18,7 +18,6 @@ permalink: /cv/
       {% assign company = site.company_name | strip %}{% if company != "" %}<p class="cv-header__contact">Independent work {% include company-link.html %}</p>{% endif %}
       <div class="cv-header__actions">
         {% if email %}<a class="btn" href="mailto:{{ email }}">Get in touch</a>{% endif %}
-        <button class="btn btn--quiet" type="button" onclick="window.print()">Print / PDF</button>
       </div>
     </div>
   </header>

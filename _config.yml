@@ -17,11 +17,9 @@ plugins:
 
 # ── Homepage ──────────────────────────────────────────────────
 home_intro: >
-  <p>I work in digital forensics and cyber security, currently as Head of Security
-  Strategy (Europe) at <a href="https://iverify.io">iVerify</a>. Most of my curiosity
-  goes into <strong>iOS forensics</strong> and <strong>mobile threat hunting</strong>:
-  where the artifacts live, what they can tell you, and how to find what shouldn't be there.
-  This is where I keep notes on what I'm learning.</p>
+  <p>Digital forensics and cyber security. Head of Security Strategy (Europe) at
+  <a href="https://iverify.io">iVerify</a>. Mostly digging into <strong>iOS forensics</strong>
+  and <strong>mobile threat hunting</strong>. These are my notes.</p>
 
 # "Currently" list on the homepage lives in _data/now.yml
 
